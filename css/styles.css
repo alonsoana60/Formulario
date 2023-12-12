@@ -78,6 +78,40 @@ h1 {
   height: 25px;
 }
 
+dialog {
+  width: 25vw;
+  height: 8vw;
+  flex-direction: column;
+  justify-content: center;
+}
+dialog .title-dialog {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+dialog .text-dialog {
+  text-align: left;
+  margin-bottom: 10px;
+}
+dialog .footer-dialog {
+  align-content: center;
+}
+dialog .footer-dialog .btn-cancel, dialog .footer-dialog .btn-confirm {
+  cursor: pointer;
+  background-color: red;
+  text-decoration: none;
+  text-align: center;
+  border: 0.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  font-size: 15px;
+  color: black;
+  height: 25px;
+}
+dialog .footer-dialog .btn-confirm {
+  background-color: green;
+  color: white;
+}
+
 .btn_return {
   background-color: lightskyblue;
   text-decoration: none;

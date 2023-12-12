@@ -91,6 +91,47 @@ h1 {
     }
 }
 
+dialog{
+    width: 25vw;
+    height: 8vw;
+    flex-direction: column;
+    justify-content: center;
+
+    .title-dialog{
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .text-dialog{
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .footer-dialog{
+        align-content: center;
+
+        .btn-cancel, .btn-confirm  {
+        cursor: pointer;
+        background-color: red;
+        text-decoration: none;
+        text-align: center;
+        border: 0.5px solid rgba(255, 255, 255, 0.45);
+        border-radius: 2px;
+        font-size: 15px;
+        color: black;
+        height: 25px;
+        } 
+
+        .btn-confirm{
+        background-color: green;
+        color:white;
+        }
+
+    }
+    
+}
+
 // fim index.html
 
 // form.html
@@ -177,3 +218,6 @@ form {
     }
     
 }
+
+// fim form.html
+

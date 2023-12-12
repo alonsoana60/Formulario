@@ -8,6 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 let users = [];
+const dialog = document.querySelector("#caixa");
+console.log(dialog);
+document.querySelector(".btn-cancel").addEventListener("click", () => { dialog.close(); });
 function loadNames() {
     return __awaiter(this, void 0, void 0, function* () {
         const resp = yield fetch("http://127.0.0.1:3500/usuarios");
@@ -19,10 +22,9 @@ function loadNames() {
 loadNames();
 function createNameList(users) {
     const tbody = document.querySelector("tbody");
-    const trs = [];
     for (const names of users) {
-        const tr = `
-        <tr>
+        const trs = document.createElement("tr");
+        const innerTr = `
             <td><a href="user.html?id=${names.id}">${names.nome} ${names.sobrenome}</a></td>
             <td>${names.cpf}</a></td>
             <td>${names.sexo}</a></td>
@@ -31,10 +33,17 @@ function createNameList(users) {
                 <button class="btn_edit">Editar</button>
                 <button class="btn_delete">Excluir</button>
             </td>
-        </tr>
         `;
-        trs.push(tr);
+        trs.innerHTML = innerTr;
+        const btnExcluirDialog = trs.querySelector(".btn_delete");
+        // console.log(btnExcluirDialog);
+        if (btnExcluirDialog) {
+            btnExcluirDialog.onclick = () => {
+                document.querySelector(".usuario").textContent = `${names.nome} ${names.sobrenome}`;
+                dialog.showModal();
+            };
+        }
+        tbody.appendChild(trs);
     }
-    tbody.innerHTML = trs.join("");
 }
 export {};
