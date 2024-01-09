@@ -48,7 +48,7 @@ h1 {
         td {
             text-align: center;
             padding: 5px;
-            border: 1px solid rgba(245, 245, 245, 0.011);        
+            border: 1px solid rgba(245, 245, 245, 0.011); 
         }
 
         a{
@@ -120,7 +120,7 @@ dialog{
         border-radius: 2px;
         font-size: 15px;
         color: black;
-        height: 25px;
+        height: 30px;
         } 
 
         .btn-confirm{
@@ -158,7 +158,7 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
-    width: 70vw;
+    width: 40vw;
 
     label {
         display: block;
@@ -207,8 +207,9 @@ form {
         color: black;
         margin-bottom: 1vw;
         cursor: pointer;
-        height: 30px;
+        height: 35px;
         width: 5vw;
+        font-size: 16px;
         
         &:hover {
             background-color: blue;

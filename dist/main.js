@@ -10,7 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 let users = [];
 const dialog = document.querySelector("#caixa");
 console.log(dialog);
-document.querySelector(".btn-cancel").addEventListener("click", () => { dialog.close(); });
+document.querySelector(".btn-cancel").addEventListener("click", () => {
+    dialog.close();
+});
 function loadNames() {
     return __awaiter(this, void 0, void 0, function* () {
         const resp = yield fetch("http://127.0.0.1:3500/usuarios");
