@@ -1,16 +1,17 @@
-import { IUserList } from "./type";
+import '../assets/scss/main.scss';
+import { IUserList } from './type';
 
 let users = [];
 
-const dialog = document.querySelector("#caixa") as HTMLDialogElement;
+const dialog = document.querySelector('#caixa') as HTMLDialogElement;
 console.log(dialog);
 
-document.querySelector(".btn-cancel")!.addEventListener("click", () => {
+document.querySelector('.btn-cancel')!.addEventListener('click', () => {
   dialog.close();
 });
 
 async function loadNames() {
-  const resp = await fetch("http://127.0.0.1:3500/usuarios");
+  const resp = await fetch('http://127.0.0.1:3500/usuarios');
   users = await resp.json();
   console.log(users);
   createNameList(users);
@@ -19,9 +20,9 @@ async function loadNames() {
 loadNames();
 
 function createNameList(users: IUserList[]) {
-  const tbody = document.querySelector("tbody");
+  const tbody = document.querySelector('tbody');
   for (const names of users) {
-    const trs = document.createElement("tr");
+    const trs = document.createElement('tr');
     const innerTr = `
             <td><a href="user.html?id=${names.id}">${names.nome} ${names.sobrenome}</a></td>
             <td>${names.cpf}</a></td>
@@ -36,15 +37,14 @@ function createNameList(users: IUserList[]) {
     trs.innerHTML = innerTr;
 
     const btnExcluirDialog = trs.querySelector(
-      ".btn_delete"
+      '.btn_delete',
     ) as HTMLDialogElement;
     // console.log(btnExcluirDialog);
 
     if (btnExcluirDialog) {
       btnExcluirDialog.onclick = () => {
-        document.querySelector(
-          ".usuario"
-        )!.textContent = `${names.nome} ${names.sobrenome}`;
+        document.querySelector('.usuario')!.textContent =
+          `${names.nome} ${names.sobrenome}`;
         dialog.showModal();
       };
     }
